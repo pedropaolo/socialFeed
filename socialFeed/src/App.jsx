@@ -1,8 +1,9 @@
 import { Header } from "./components/Header"
-import './global.css'
-
-import styles from './App.module.css'
 import { SideBar } from "./components/SideBar"
+import { Post } from "./components/Post"
+
+import './global.css'
+import styles from './App.module.css'
 
 function App() {
  
@@ -17,7 +18,7 @@ function App() {
 
       {/* Feed */}
       <main>
-        <h3>Aqui fica o dahsboard</h3>
+       <Post />
       </main>
 
     </div>

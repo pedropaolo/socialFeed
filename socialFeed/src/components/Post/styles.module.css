@@ -1,0 +1,66 @@
+.post {
+    background-color: #333;
+    border-radius: 0.4rem;
+    padding: 2.5rem;
+}
+
+.post header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.avatarPic {
+    
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    border: 4px solid var(--gray-800);
+    outline: 2px solid orange;
+
+}
+
+.post header > time {
+    font-size: 0.875rem;
+    color: var(--gray-400);
+}
+
+/* Seletor para todo post que contenha um outro post antes */
+
+.post + .post {
+
+    margin-top: 2rem;
+
+}
+
+.postText {
+    font-size: 0.875rem;
+    color: white;
+}
+
+.content {
+    border: solid blue 1px;
+    line-height: 1.6;
+    color: var(--gray-300);
+    margin-top: 1.5rem;
+}
+
+.author {
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.authorInfo span {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--gray-400);
+    line-height: 1.6;
+}
+
+.authorInfo strong {
+    display: block;
+    color: var(--gray-100);
+    line-height: 1.6;
+}
