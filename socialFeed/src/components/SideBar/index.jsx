@@ -1,6 +1,7 @@
 import './styles.css'
 
 import backImage from '../../assets/back.avif'
+import { PencilLine } from 'phosphor-react'
 
 export function SideBar() {
     return (
@@ -9,14 +10,19 @@ export function SideBar() {
             <img  className='backImage' src={backImage}  />
 
             {/* Corpo do Card */}
-            <div>
+            <div className='profile'>
+             <img className='avatar' src="https://github.com/pedropaolo.png" />
              <strong>Pedro Paolo</strong>
-             <span>Um dev muito brabo</span>
+             <p>Web developer</p>
             </div>
 
-            {/* Ações */}
+            {/* Linha divisória */}
+            <div className='line'></div>
+
+            {/* Botão */}
             <footer>
-                <a href="#">Editar seu perfil</a>
+                <a href="#">
+                <PencilLine /> Editar seu perfil</a>
             </footer>
         
         </aside>
