@@ -21,7 +21,7 @@ export function Post() {
 
             <div className={styles.content}>
                 <p className={styles.postText}>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam velit veritatis natus provident, officiis, voluptatibus ipsam atque accusamus suscipit eum ducimus nostrum non iste quidem commodi dolore possimus dolores est?
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam velit veritatis natus provident, officiis, voluptatibus ipsam atque accusamus suscipit eum ducimus nostrum non iste quidem commodi dolore possimus dolores est? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ullam veniam maiores ex sapiente, iusto quae, soluta corrupti similique nihil obcaecati dolorum reprehenderit exercitationem facilis voluptatem adipisci dolorem sit esse.
                 </p>
 
             </div>
