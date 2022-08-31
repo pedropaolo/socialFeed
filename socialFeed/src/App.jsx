@@ -5,6 +5,25 @@ import { Post } from "./components/Post"
 import './global.css'
 import styles from './App.module.css'
 
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: 'https://github.com/pedropaolo.png',
+      name: 'Pedro Paolo', 
+      role: 'Full Stack Developer'
+    },
+
+    content: [
+      { type: 'paragraph' , content: "E ai galera!"},
+      { type: 'paragraph' , content: "Acabei de subir um projeto novo no meu git! confere lá"},
+      { type: 'paragraph' , content:'www.google.com'}
+    ],
+
+    publishedAt: new Date('2022-31-08 16:57:00')
+  }
+]
+
 function App() {
  
 
@@ -18,7 +37,11 @@ function App() {
 
       {/* Feed */}
       <main>
-       <Post />
+       {
+        posts.map(post => {
+          return <Post author={post.author} content={post.content} publishedAt={post.publishedAt}/>
+        })
+       }
       </main>
 
     </div>

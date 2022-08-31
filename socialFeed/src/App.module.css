@@ -9,3 +9,16 @@
     gap: 2.5rem;
 
 }
+
+/* Ajuste responsividade - Definições para quando o tamanaho da tela for menor do que 768px */
+
+@media (max-width: 768px) {
+
+    htnl {
+        font-size: 87.5%;
+    }
+
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+}
