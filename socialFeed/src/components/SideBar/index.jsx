@@ -2,6 +2,7 @@ import styles from './styles.module.css'
 
 import backImage from '../../assets/back.avif'
 import { Pencil } from 'phosphor-react'
+import { Avatar } from '../Avatar'
 
 export function SideBar() {
     return (
@@ -11,7 +12,7 @@ export function SideBar() {
 
             {/* Corpo do Card */}
             <div className={styles.profile}>
-                <img className={styles.avatar} src="https://github.com/pedropaolo.png" />
+                <Avatar src="https://github.com/pedropaolo.png" />
                 <strong>Pedro Paolo</strong>
                 <p>Web developer</p>
             </div>

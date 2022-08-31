@@ -47,7 +47,14 @@
     color: var(--gray-400);
     cursor: pointer;
     line-height: 0;
+
+    transition: background-color 0.2s;
 }
+
+.commentContent header button:hover {
+    color: orange;
+}
+
 
 .mainText {
     margin-top: 1rem;
