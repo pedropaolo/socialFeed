@@ -20,7 +20,27 @@ const posts = [
       { type: 'paragraph' , content:'www.google.com'}
     ],
 
-    publishedAt: new Date('2022-31-08 16:57:00')
+    publishedAt: new Date('2022-09-22T15:58:00')
+  } ,
+
+  {
+    id: 2,
+    author: {
+      avatarUrl: 'https://github.com/pedropaolo.png',
+      name: 'Fulano', 
+      role: 'Backend Developer'
+    },
+
+    content: [
+      { type: 'paragraph' , content: "Boa noite!"},
+      { type: 'paragraph' , content: "Lorem ipsum dolor sit amet consectetur adipisicing elit."},
+      { type: 'paragraph' , content:'www.google.com'}
+    ],
+
+
+
+
+    publishedAt: new Date('2022-09-22T15:58:00')
   }
 ]
 
