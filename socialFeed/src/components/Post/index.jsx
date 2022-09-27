@@ -1,8 +1,52 @@
 import styles from './post.module.css'
 import { Comment } from '../Comment'
 import { Avatar } from '../Avatar'
+import { useState } from 'react';
+
 
 export function Post(props) {
+
+    const [comment , writeComment ] = useState([
+        'Você é fonomeno mlq doido!'
+    ]);
+
+    const [newComment, setNewComment] = useState('');
+
+    
+
+    function handleCreateComment() {
+
+        // Avoiding html default behavior (Refreshing the page whein submit form)
+
+        event.preventDefault()
+
+        /* Using setState function to add the new comment on the screen
+
+        1-
+
+        2- ...comment, is a spred Operator -> maintains all the previous content of the array and push the new
+        content in the last position of the array
+        
+        */
+
+        writeComment([...comment, newComment ])
+        setNewComment('');
+
+        // Cleaning the input text area when the form is submited
+
+        // event.target.comment.value = '';
+
+    }
+
+
+    function handleNewComment() {
+
+        event.preventDefault()
+
+        // event.target.value returns the value on the element wicth flag was setted to onChange
+        // The function storage the new value in the state newComment
+        setNewComment(event.target.value)
+    }
 
     // Convertendo data através do Intl - https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Intl
 
@@ -51,10 +95,14 @@ export function Post(props) {
 
             </div>
 
-            <form className={styles.commentForm}>
+            <form onSubmit={handleCreateComment} className={styles.commentForm}>
                 <strong className={styles.comment}>Deixe seu feedback</strong>
 
-                <textarea placeholder='Deixe um comentário'></textarea>
+                <textarea
+                 placeholder='Deixe um comentário' 
+                 name="comment"
+                 onChange={handleNewComment}
+                 value={newComment}></textarea>
 
                 <footer>
                     <button type='submit'>Comentar</button>
@@ -63,8 +111,9 @@ export function Post(props) {
             </form>
 
             <div className={styles.commentList}>
-                <Comment />
-                <Comment />
+                { comment.map( comment => {
+                    return <Comment content={comment}/>
+                })}
             </div>
 
         </article>
