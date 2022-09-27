@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 export function Post(props) {
 
-    const [comment , writeComment ] = useState([
+    const [comment , setComment ] = useState([
         'Você é fonomeno mlq doido!'
     ]);
 
@@ -22,14 +22,12 @@ export function Post(props) {
 
         /* Using setState function to add the new comment on the screen
 
-        1-
-
         2- ...comment, is a spred Operator -> maintains all the previous content of the array and push the new
         content in the last position of the array
         
         */
 
-        writeComment([...comment, newComment ])
+        setComment([...comment, newComment ])
         setNewComment('');
 
         // Cleaning the input text area when the form is submited
@@ -50,7 +48,18 @@ export function Post(props) {
 
     // Convertendo data através do Intl - https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Intl
 
-    console.log("MOTHEFOCKER" , props)
+    // The filter() method creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function. If true => removes the element. If false, keeps the element
+
+    function deleteComment(commentToDelete) {
+        
+        const commentsWithoutDeletedOne = comment.filter( comment => {
+            return comment != commentToDelete;
+        })
+
+        setComment(commentsWithoutDeletedOne)
+    }
+
+    
     const publishedDateFormat = new Intl.DateTimeFormat('pt-BR' , {
         day: '2-digit',
         month: 'long',
@@ -84,11 +93,11 @@ export function Post(props) {
                 <p className={styles.postText}>
                     {props.content.map( line => {
                         if(line.type == 'paragraph') {
-                            return <p>{line.content}</p>
+                            return <p key={line.content}>{line.content}</p>
                         }
 
                         else if (line.type == 'link'){
-                            return <p><a href="#">{line.content}</a></p>
+                            return <p  key={line.content}><a href="#">{line.content}</a></p>
                         }
                     })}
                 </p>
@@ -112,7 +121,7 @@ export function Post(props) {
 
             <div className={styles.commentList}>
                 { comment.map( comment => {
-                    return <Comment content={comment}/>
+                    return <Comment key={comment} content={comment} deleteComment={deleteComment}/>
                 })}
             </div>
 
