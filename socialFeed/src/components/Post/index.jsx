@@ -50,6 +50,8 @@ export function Post(props) {
 
     // The filter() method creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function. If true => removes the element. If false, keeps the element
 
+    // OBS: The application will delete two comments with the same content. The ideal way to do it is identifying the comment by the id (unique).
+
     function deleteComment(commentToDelete) {
         
         const commentsWithoutDeletedOne = comment.filter( comment => {
@@ -108,10 +110,13 @@ export function Post(props) {
                 <strong className={styles.comment}>Deixe seu feedback</strong>
 
                 <textarea
-                 placeholder='Deixe um comentário' 
-                 name="comment"
-                 onChange={handleNewComment}
-                 value={newComment}></textarea>
+                    placeholder='Deixe um comentário' 
+                    name="comment"
+                    onChange={handleNewComment}
+                    value={newComment}
+                    required 
+                 >
+                 </textarea>
 
                 <footer>
                     <button type='submit'>Comentar</button>
